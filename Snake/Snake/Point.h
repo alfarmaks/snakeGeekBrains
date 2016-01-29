@@ -5,6 +5,27 @@ private:
 	int x = 0, y = 0;
 	char symb = '*';
 public:
+	int getX() const{
+		return this->x;
+	}
+	int getY() const{
+		return this->y;
+	}
+	char getSymb() const{
+		return this->symb;
+	}
+	Point(Point const & Some){
+		this->x = Some.getX();
+		this->y = Some.getY();
+		this->symb = Some.getSymb();
+	}
+	bool &operator==(Point &Some){
+		bool flag = true;
+		if (this->x != Some.getX()) flag = false;
+		if (this->y != Some.getY()) flag = false;
+		if (this->symb != Some.getSymb()) flag = false;
+		return flag;
+	}
 	Point(int x, int y, char sym){
 		this->x = x;
 		this->y = y;
