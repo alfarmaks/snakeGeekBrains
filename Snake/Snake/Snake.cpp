@@ -10,16 +10,10 @@ using namespace std;
 int _tmain(int argc, _TCHAR* argv[])
 {
 	//Point number one
-	Point p1;
-	p1.x = 1;
-	p1.y = 1;
-	p1.symb = 'X';
+	Point p1(1, 1, 'X');
 	p1.Draw();
 	//Point number two
-	Point* p2 = new Point();
-	p2->x = 0;
-	p2->y = 0;
-	p2->symb = '#';
+	Point* p2 = new Point(0, 0, '#');
 	p2->Draw();
 	system("pause>>void"); //Stop program while user don't press any key. 
 	return 0;
