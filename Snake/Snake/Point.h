@@ -1,5 +1,5 @@
-
-
+#include <Windows.h>
+#include <iostream>
 class Point{
 private:
 	int x = 0, y = 0;
