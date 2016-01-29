@@ -1,5 +1,7 @@
 #include <Windows.h>
 #include <iostream>
+#ifndef POINT_INCLUDED
+#define POINT_INCLUDED
 class Point{
 private:
 	int x = 0, y = 0;
@@ -38,3 +40,4 @@ public:
 		std::cout << symb;
 	}
 };
+#endif

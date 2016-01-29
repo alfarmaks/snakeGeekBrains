@@ -1,18 +1,12 @@
-#include <list>
-class HorizontalLine{
+#include "Figure.h"
+class HorizontalLine : public Figure{
 private:
-	std::list<Point>* line;
+	Figure::line;
 public:
 	HorizontalLine(int startPos, int endPos, int y, char symbol){
 		line = new std::list<Point>();
 		for (int x = startPos; x <= endPos; x++){
 			line->push_back(Point(x, y, symbol));
-		}
-	}
-
-	void Draw(){
-		for (auto it = line->begin(); it != line->end(); it++){
-			it->Draw();
 		}
 	}
 };
