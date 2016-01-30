@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "HorizontalLine.h"
 #include "VerticalLine.h"
+#include "Snake.h"
 using namespace std;
 
 int _tmain(int argc, _TCHAR* argv[])
@@ -20,6 +21,11 @@ int _tmain(int argc, _TCHAR* argv[])
 	downX.Draw();
 	topY.Draw();
 	downY.Draw();
+
+	Point p(12, 7, 'o');
+	Snake snake(p, 2, Direction::RIGHT);
+
+	snake.Draw();
 	system("pause>>void"); //Stop program while user don't press any key. 
 	return 0;
 }

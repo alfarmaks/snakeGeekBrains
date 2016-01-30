@@ -1,5 +1,6 @@
 #include <Windows.h>
 #include <iostream>
+#include "Direction.h"
 #ifndef POINT_INCLUDED
 #define POINT_INCLUDED
 class Point{
@@ -32,6 +33,20 @@ public:
 		this->x = x;
 		this->y = y;
 		this->symb = sym;
+	}
+	void Move(int offset, Direction dir){
+		if (dir == Direction::DOWN){
+			this->y -= offset;
+		}
+		else if (dir == Direction::UP){
+			this->y += offset;
+		}
+		else if (dir == Direction::LEFT){
+			this->x -= offset;
+		}
+		else if (dir == Direction::RIGHT){
+			this->x += offset;
+		}
 	}
 	void Draw(){
 		COORD pos = { x, y };//struct for coordinate our point(symbol)
