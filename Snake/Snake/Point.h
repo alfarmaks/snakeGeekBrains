@@ -22,6 +22,14 @@ public:
 		this->y = Some.getY();
 		this->symb = Some.getSymb();
 	}
+	friend bool &operator==(Point Left, Point Right){
+		bool flag = true;
+		if (Left.getX()!= Right.getX()) flag = false;
+		if (Left.getY() != Right.getY()) flag = false;
+		if (Left.getSymb() != Right.getSymb()) flag = false;
+		return flag;
+	}
+
 	bool &operator==(Point &Some){
 		bool flag = true;
 		if (this->x != Some.getX()) flag = false;
@@ -47,6 +55,10 @@ public:
 		else if (dir == Direction::RIGHT){
 			this->x += offset;
 		}
+	}
+	void Clear(){
+		symb = ' ';
+		Draw();
 	}
 	void Draw(){
 		COORD pos = { x, y };//struct for coordinate our point(symbol)

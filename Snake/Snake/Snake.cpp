@@ -26,6 +26,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	Snake snake(p, 2, Direction::RIGHT);
 
 	snake.Draw();
+	snake.Move();
 	system("pause>>void"); //Stop program while user don't press any key. 
 	return 0;
 }
