@@ -5,6 +5,7 @@
 #include "HorizontalLine.h"
 #include "VerticalLine.h"
 #include "Snake.h"
+#include <conio.h>
 using namespace std;
 
 int _tmain(int argc, _TCHAR* argv[])
@@ -24,9 +25,17 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	Point p(12, 7, 'o');
 	Snake snake(p, 2, Direction::RIGHT);
-
 	snake.Draw();
-	snake.Move();
+	char key;
+	while (true){
+		if (kbhit()){
+			key = _getch();
+			snake.handleKey(key);
+		}
+		Sleep(150);
+		snake.Move();
+	}
+	
 	system("pause>>void"); //Stop program while user don't press any key. 
 	return 0;
 }

@@ -44,10 +44,10 @@ public:
 	}
 	void Move(int offset, Direction dir){
 		if (dir == Direction::DOWN){
-			this->y -= offset;
+			this->y += offset;
 		}
 		else if (dir == Direction::UP){
-			this->y += offset;
+			this->y -= offset;
 		}
 		else if (dir == Direction::LEFT){
 			this->x -= offset;

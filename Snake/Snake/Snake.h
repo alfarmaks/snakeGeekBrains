@@ -28,4 +28,19 @@ public:
 		head.Move(1, direction);
 		return head;
 	}
+	
+	void handleKey(char key){
+		if (key == 68 || key == 100){
+			direction = Direction::RIGHT;
+		}
+		else if (key == 65 || key == 97){
+			direction = Direction::LEFT;
+		}
+		else if (key == 87 || key == 119){
+			direction = Direction::UP;
+		}
+		else if (key == 83 || key == 115){
+			direction = Direction::DOWN;
+		}
+	}
 };
