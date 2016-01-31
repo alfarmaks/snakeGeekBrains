@@ -43,4 +43,15 @@ public:
 			direction = Direction::DOWN;
 		}
 	}
+
+	bool Eat(Point &food){
+		Point head = getNewPoint();
+		if (head.isHit(food)){
+			food.setSymb('o');
+			line->push_back(food);
+			food.Draw();
+			return true;
+		}
+		return false;
+	}
 };

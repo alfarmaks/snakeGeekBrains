@@ -37,6 +37,14 @@ public:
 		if (this->symb != Some.getSymb()) flag = false;
 		return flag;
 	}
+	
+	bool isHit(Point food){
+		return this->x == food.getX() && this->y == food.getY();
+	}
+	void setSymb(char sym){
+		this->symb = sym;
+	}
+
 	Point(int x, int y, char sym){
 		this->x = x;
 		this->y = y;
