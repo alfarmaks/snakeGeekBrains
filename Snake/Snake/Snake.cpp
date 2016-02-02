@@ -10,6 +10,10 @@
 #include <time.h>
 using namespace std;
 
+void Draw(Figure figure){
+	figure.Draw();
+}
+
 int _tmain(int argc, _TCHAR* argv[])
 {
 	srand((unsigned)time(NULL));//randomize random
@@ -21,10 +25,14 @@ int _tmain(int argc, _TCHAR* argv[])
 	HorizontalLine downX(0, 25, 15, '#');
 	VerticalLine topY(0, 1, 14, '#');
 	VerticalLine downY(25, 1, 14, '#');
-	topX.Draw();
+	Draw(topX);
+	Draw(topY);
+	Draw(downX);
+	Draw(downY);
+	/*topX.Draw();
 	downX.Draw();
 	topY.Draw();
-	downY.Draw();
+	downY.Draw();*/
 
 	Point p(12, 7, 'o');
 	Snake snake(p, 2, Direction::RIGHT);

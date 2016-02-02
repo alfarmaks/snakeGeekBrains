@@ -28,6 +28,11 @@ public:
 		head.Move(1, direction);
 		return head;
 	}
+
+	Point getCurrPoint(){
+		Point head = *(--(line->end()));
+		return head;
+	}
 	
 	void handleKey(char key){
 		if (key == 68 || key == 100){
@@ -44,10 +49,11 @@ public:
 		}
 	}
 
-	bool Eat(Point &food){
-		Point head = getNewPoint();
+	bool Eat(Point food){
+		Point head = getCurrPoint();
 		if (head.isHit(food)){
 			food.setSymb('o');
+			food.Move(1, direction);
 			line->push_back(food);
 			food.Draw();
 			return true;
