@@ -1,4 +1,6 @@
 #include "Figure.h"
+#ifndef HORIZONTAL_INCLUDED
+#define HORIZONTAL_INCLUDED
 class HorizontalLine : public Figure{
 private:
 	Figure::line;
@@ -10,3 +12,4 @@ public:
 		}
 	}
 };
+#endif

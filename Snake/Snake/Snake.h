@@ -36,16 +36,24 @@ public:
 	
 	void handleKey(char key){
 		if (key == 68 || key == 100){
-			direction = Direction::RIGHT;
+			if (direction != Direction::LEFT){
+				direction = Direction::RIGHT;
+			}
 		}
 		else if (key == 65 || key == 97){
-			direction = Direction::LEFT;
+			if (direction != Direction::RIGHT){
+				direction = Direction::LEFT;
+			}
 		}
 		else if (key == 87 || key == 119){
-			direction = Direction::UP;
+			if (direction != Direction::DOWN){
+				direction = Direction::UP;
+			}
 		}
 		else if (key == 83 || key == 115){
-			direction = Direction::DOWN;
+			if (direction != Direction::UP){
+				direction = Direction::DOWN;
+			}
 		}
 	}
 
@@ -57,6 +65,16 @@ public:
 			line->push_back(food);
 			food.Draw();
 			return true;
+		}
+		return false;
+	}
+
+	bool isHitTail(){
+		Point head = *(--(line->end()));
+		for (auto point = line->begin(); point != (--line->end()); point++){
+			if (head.isHit(*point)){
+				return true;
+			}
 		}
 		return false;
 	}

@@ -1,5 +1,6 @@
-
 #include "Figure.h"
+#ifndef VERTICAL_INCLUDED
+#define VERTICAL_INCLUDED
 class VerticalLine : public Figure{
 private:
 	Figure::line;
@@ -11,3 +12,4 @@ public:
 		}
 	}
 };
+#endif

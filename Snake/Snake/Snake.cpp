@@ -2,17 +2,13 @@
 //
 
 #include "stdafx.h"
-#include "HorizontalLine.h"
-#include "VerticalLine.h"
+#include "Walls.h"
 #include "Snake.h"
 #include "FoodCreator.h"
 #include <conio.h>
 #include <time.h>
 using namespace std;
 
-void Draw(Figure figure){
-	figure.Draw();
-}
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -21,18 +17,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	SMALL_RECT rect = { 0, 0, 25, 15 };
 	SetConsoleWindowInfo(hConsole, TRUE, &rect);
 
-	HorizontalLine topX(0, 25, 0, '#');
-	HorizontalLine downX(0, 25, 15, '#');
-	VerticalLine topY(0, 1, 14, '#');
-	VerticalLine downY(25, 1, 14, '#');
-	Draw(topX);
-	Draw(topY);
-	Draw(downX);
-	Draw(downY);
-	/*topX.Draw();
-	downX.Draw();
-	topY.Draw();
-	downY.Draw();*/
+	Walls walls(25, 15);
+	walls.Draw();
 
 	Point p(12, 7, 'o');
 	Snake snake(p, 2, Direction::RIGHT);
@@ -44,6 +30,9 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	char key;
 	while (true){
+		if (walls.IsHit(snake) || snake.isHitTail()){
+			break;
+		}
 		if (snake.Eat(food)){
 			food = foodCreator.CreateFood();
 			food.Draw();
@@ -57,6 +46,6 @@ int _tmain(int argc, _TCHAR* argv[])
 		snake.Move();
 	}
 	
-	system("pause>>void"); //Stop program while user don't press any key. 
+	//system("pause>>void"); //Stop program while user don't press any key. 
 	return 0;
 }
