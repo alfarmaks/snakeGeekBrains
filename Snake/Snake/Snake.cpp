@@ -1,4 +1,4 @@
-// Snake.cpp: определяет точку входа для консольного приложения.
+// Snake.cpp: Г®ГЇГ°ГҐГ¤ГҐГ«ГїГҐГІ ГІГ®Г·ГЄГі ГўГµГ®Г¤Г  Г¤Г«Гї ГЄГ®Г­Г±Г®Г«ГјГ­Г®ГЈГ® ГЇГ°ГЁГ«Г®Г¦ГҐГ­ГЁГї.
 //
 
 #include "stdafx.h"
@@ -26,10 +26,10 @@ void GameOver(){
 	SetConsoleTextAttribute(hConsole, 0x3C);
 	SetConsoleCursorPosition(hConsole, pos);
 	WriteText("============================", xOffset, yOffset++);
-	WriteText("И Г Р А    О К О Н Ч Е Н А", xOffset+1, yOffset++);
+	WriteText("Р Р“ Р  Рђ    Рћ Рљ Рћ Рќ Р§ Р• Рќ Рђ", xOffset+1, yOffset++);
 	yOffset++;
-	WriteText("Автор: Бондарь Максим", xOffset + 2, yOffset++);
-	WriteText("Специально для себя любимого", xOffset, yOffset++);
+	WriteText("РђРІС‚РѕСЂ: Р‘РѕРЅРґР°СЂСЊ РњР°РєСЃРёРј", xOffset + 2, yOffset++);
+	WriteText("РЎРїРµС†РёР°Р»СЊРЅРѕ РґР»СЏ СЃРµР±СЏ Р»СЋР±РёРјРѕРіРѕ", xOffset, yOffset++);
 	WriteText("============================", xOffset, yOffset++);
 }
 
